@@ -1,1 +1,31 @@
+Steps taken to create profits and losses tableau visualation project
 
+1. Connect Data
+
+Load Sample - Superstore dataset (Orders sheet key for Sales, Profit, Category, Sub-Category, Region, State, Order Date).
+
+2. Key Calculations
+
+Profit Ratio: SUM([Profit]) / SUM([Sales])
+Optional: Profit Flag for coloring (IF [Profit] >= 0 THEN "Profit" ELSE "Loss" END)
+
+3. Build Core Sheets
+
+Sub-Category Profit Bar: Sub-Category on Rows, Profit on Columns; sort descending; red-green diverging color; add labels.
+Category Profit: Similar bar or stacked, detailed by Sub-Category.
+Profit Map: State on Detail → auto-map; Profit on Color (red-green).
+Profit Trend: Order Date (Month/Year) on Columns, Profit on Rows (line); optional dual-axis Sales.
+KPIs: Text sheets for Total Profit, Sales, Profit Ratio (large formatted numbers).
+
+4. Dashboard Assembly
+
+Add title "Profits and Losses".
+Layout: KPIs top; map left, main bar right; trend bottom.
+Add filters: Year, Region, Category (apply globally).
+Actions: Filter on selection, highlight on hover.
+
+5. Polish & Publish
+
+Consistent red (loss) / green (profit) palette.
+Custom tooltips, currency formatting.
+Publish to Tableau Public.
