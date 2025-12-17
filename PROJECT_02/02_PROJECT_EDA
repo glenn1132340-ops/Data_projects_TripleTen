@@ -1,1 +1,31 @@
+Shopify App Analysis
 
+Project Overview
+This project analyzes user behavior and conversion metrics for a e-commerce website using Excel. The goal was to help the executive team understand how well the site converts visitors into buyers and how well it retains customers over time.
+
+Key Analyses Performed
+1. Conversion Funnel
+   • Built a 3-stage funnel (Product View → Add to Cart → Purchase) using unique user counts from raw activity data
+   • Calculated overall conversion rate and step-to-step drop-off rates
+
+2. Cohort Retention Analysis
+   • Isolated 4,845 purchase events from mixed activity data
+   • Calculated each user's first purchase month to form acquisition cohorts (6 cohorts total)
+   • Tracked monthly retention by calculating cohort age (0-4 months)
+   • Computed retention rates for months 1-4 after first purchase
+
+Skills Demonstrated
+• Advanced Excel techniques: Pivot tables, filters, VLOOKUP, TEXT(), DATEDIF()
+• Data cleaning and preparation for cohort analysis
+• Building clear, executive-ready summaries with proper formatting and documentation
+
+Key Insights (from the analysis)
+• Significant drop-off between product views and adding to cart
+• Highest retention in the first cohort, with gradual decline in later cohorts
+• Opportunities to improve early funnel stages and re-engagement strategies
+
+Tools Used
+Excel (pivot tables, advanced formulas, dashboard-like sheets)
+
+Live File
+The full Excel workbook with all sheets, calculations, and executive summary is attached in -PROJECT_02_SUBMISSION-
