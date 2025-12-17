@@ -1,23 +1,21 @@
-Steps taken to create Power BI visual project
+Steps taken to create Tableau visual project
 
-1. Load Data
-Import Listings (id, neighbourhood_cleansed, bedrooms, etc.) and Calendar (listing_id, date, available, price).
-
-2. Prep & Measures
-Clean price (remove $).
-Add column: Booked Revenue = IF(available = "f", price, 0).
-Key measures:
-Total Listings = DISTINCTCOUNT(Listings[id])Total Revenue = SUM(Calendar[Booked Revenue])Avg Daily Rate = AVERAGE(Calendar[price])Occupancy = DIVIDE(COUNTROWS(FILTER(Calendar, available="f")), COUNTROWS(Calendar))
-
-3. Visuals
-Cards: Total Listings (7341), Total Revenue, Avg Daily Rate, Occupancy.
-Horizontal bar: Count of id by neighbourhood_cleansed (top 10–15, descending).
-Clustered column: Count of id by bedrooms.
-Filled map: neighbourhood_cleansed with Total Revenue or count on color.
-Slicers: bedrooms (multi), room_type.
-
-4. Layout & Polish
-Dark page background, light cards.
-Title at top (e.g., “Airbnb Market Overview”).
-Enable cross-filtering and slicer sync.
-Custom tooltips, consistent colors.
+1. Connect Data
+Load Listings (id, neighbourhood, bedrooms, room_type, price, etc.) and Calendar (listing_id, date, available, price) datasets.
+2. Prep & Calculations
+Clean price fields (remove $ symbols).
+Create key fields: Booked Revenue = IF([available] = "f", [price], 0); Total Listings = COUNTD([id]); Average Price; Occupancy Rate; Total Revenue.
+3. Build Visuals
+KPI Cards: Total Listings, Average Price, Occupancy Rate, Total/Estimated Revenue.
+Bar/Column Charts: Count or revenue by neighbourhood (top N, sorted); distribution by bedrooms.
+Filled Map: Neighbourhoods colored/sized by revenue, count, or price.
+Filters: Room type, bedrooms (multi-select).
+4. Dashboard Layout
+Add dashboard title (e.g., "Airbnb Market Overview").
+Top row: KPI cards.
+Main area: Map on one side, bar charts on the other.
+Apply filters globally and add actions for cross-filtering/highlighting.
+5. Polish & Publish
+Apply consistent color palette, custom tooltips, currency/date formatting.
+Test interactivity.
+Publish to Tableau Public.
