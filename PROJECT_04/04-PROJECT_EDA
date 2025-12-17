@@ -1,0 +1,21 @@
+1. Load Data
+  Import Listings (id, neighbourhood_cleansed, bedrooms, etc.) and Calendar (listing_id, date, available, price).
+
+2. Prep & Measures
+  Clean price (remove $).
+  Add column: Booked Revenue = IF(available = "f", price, 0).
+  Key measures:
+  Total Listings = DISTINCTCOUNT(Listings[id])Total Revenue = SUM(Calendar[Booked Revenue])Avg Daily Rate = AVERAGE(Calendar[price])Occupancy = DIVIDE(COUNTROWS(FILTER(Calendar, available="f")), COUNTROWS(Calendar))
+
+3. Visuals
+  Cards: Total Listings (7341), Total Revenue, Avg Daily Rate, Occupancy.
+  Horizontal bar: Count of id by neighbourhood_cleansed (top 10–15, descending).
+  Clustered column: Count of id by bedrooms.
+  Filled map: neighbourhood_cleansed with Total Revenue or count on color.
+  Slicers: bedrooms (multi), room_type.
+
+4. Layout & Polish
+  Dark page background, light cards.
+  Title at top (e.g., “Airbnb Market Overview”).
+  Enable cross-filtering and slicer sync.
+  Custom tooltips, consistent colors.
