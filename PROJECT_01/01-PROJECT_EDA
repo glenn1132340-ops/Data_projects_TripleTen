@@ -1,1 +1,31 @@
+# steps taken to create Manhatten investment Project #
 
+1. Workbook Setup
+
+Create sheets: Table of Contents, Summary, Data Dictionary, Original Listings, Listings (cleaned), Calendar, plus four pivot table sheets (Revenue by Listing, Popular Bedrooms Overall, Bedrooms by Neighborhood, Top 10 Neighborhoods).
+
+2. Load & Clean Data
+
+Import listings data into Listings sheet (key fields: listing_id, neighbourhood, bedrooms, price).
+Import calendar data into Calendar sheet (key fields: listing_id, date, available, price).
+Clean prices (remove $), add daily_revenue column: =IF(available="f", price, 0).
+
+3. Calculate Total Revenue per Listing
+
+Create pivot table (Sum of Rev for Listing ID): Rows = listing_id, Values = Sum of daily_revenue.
+In Listings sheet, add Total Revenue column using VLOOKUP to pull from the pivot.
+
+4. Analyze Bedroom Popularity
+
+Pivot 1 (Most Pop Bedroom Amount): Rows = bedrooms, Values = Count of listings (sort descending).
+Pivot 2 (Most Pop Bedroom Amount and Neighborhood): Rows = neighbourhood + bedrooms, Values = Count of listings.
+
+5. Rank Top Neighborhoods
+
+Pivot (Top 10 Neighborhoods): Rows = neighbourhood, Values = Sum of Total Revenue + Count of listings; sort descending and filter to Top 10.
+Add supporting charts (bar/column).
+
+6. Summary & Polish
+
+Build Summary sheet with key insights, embedded charts, and metrics.
+Add hyperlinks in Table of Contents, format tables (freeze panes, currency, bold headers), and document assumptions in Data Dictionary.
